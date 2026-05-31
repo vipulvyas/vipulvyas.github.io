@@ -3,315 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Vipul Vyas | Senior Software Development Engineer</title>
+    <meta name="description" content="Portfolio of Vipul Vyas, Senior SDE specializing in Fintech, Scalable Systems, KYC/AML, and Full-Stack Development.">
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-    <div class="scroll-up-btn">
-        <i class="fas fa-angle-up"></i>
-    </div>
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
-            <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
-                <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#services" class="menu-btn">Services</a></li>
-                <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#timeline" class="menu-btn">Timeline</a></li>
-                <li><a href="#teams" class="menu-btn">Teams</a></li>
-                <li><a href="#contact" class="menu-btn">Contact</a></li>
-            </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+    <div class="mesh-bg"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Vipul<span>Vyas</span></div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#fintech">Fintech</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
     </nav>
 
-    <!-- home section start -->
-    <section class="home" id="home">        
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello, my name is</div>
-                <div class="text-2">Vipul Vyas</div>
-                <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="#about">Here you go...</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, World! I'm</p>
+            <h1>Vipul Vyas</h1>
+            <div class="typing-wrap">
+                <span class="typing"></span>
+            </div>
+            <p class="hero-sub">5+ years building mission-critical Fintech & SaaS platforms at scale.</p>
+            <div class="hero-btns">
+                <a href="#work" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- about section start -->
+    <!-- About Section -->
     <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="images/profile-1.jpeg" alt="">
+        <h2 class="section-title">01. About Me</h2>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://avatars.githubusercontent.com/u/41857567?v=4" alt="Vipul Vyas">
+            </div>
+            <div class="about-text">
+                <p>Senior Software Engineer with 5+ years of experience building scalable fintech and SaaS platforms. I specialize in payment systems, merchant onboarding, KYC/AML compliance, and distributed systems architecture on AWS.</p>
+                <p>My core expertise spans Python (Django), Node.js, React, and the full AWS/cloud stack — from containerized microservices on Kubernetes to event-driven Kafka pipelines.</p>
+                <div class="about-stats">
+                    <div class="stat"><span>5+</span><p>Years Experience</p></div>
+                    <div class="stat"><span>3</span><p>Companies</p></div>
+                    <div class="stat"><span>10+</span><p>Tech Articles</p></div>
                 </div>
-                <div class="column right">
-                    <div class="text">I'm Vipul and I'm a <span class="typing-2"></span></div>
-                    <p>I am a full-stack software developer. I have knowledge of many Programming languages but have a love for JavaScript and python. Also, I have knowledge of the cyber security field and also enjoying in both software development and cyber security. Good at googling, problem understanding and problem solving.
-                    </p>
-                    <a href="./CV/VIPUL_VYAS_SDE1.pdf" download >Download CV</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/vipulvyas-hasky/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/vipulvyas" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@vipulvyas" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://stackoverflow.com/users/17560860/vipulvyas" target="_blank" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- services section start -->
-    <section class="services" id="services">
-        <div class="max-width">
-            <h2 class="title">My services</h2>
-            <div class="serv-content">
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-paint-brush"></i>
-                        <div class="text">Web Development</div>
-                        <p>Providing serivce of web development. which will be Scalable and easy to maintain. </p>
-                    </div>
+    <!-- Fintech Mastery Section -->
+    <section class="fintech" id="fintech">
+        <div class="fintech-showcase">
+            <h2 class="section-title">02. Fintech Mastery</h2>
+            <p class="section-sub">Specialized in building high-assurance fintech infrastructure — from compliance pipelines to real-time payment systems.</p>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Merchant Onboarding</h3>
+                    <p>End-to-end automated platform with PAN, GSTIN, TAN, Bank & UBO verification, reducing manual effort by <strong>70%</strong> and activation time by <strong>40%</strong>.</p>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="text">Cloud Solution</div>
-                        <p>Providing cloud based solution and scale your application.</p>
-                    </div>
+                <div class="compliance-card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>KYC & AML Compliance</h3>
+                    <p>Distributed pipelines for sanctions screening, entity matching & automated re-KYC, improving compliance efficiency by <strong>60%</strong>.</p>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-handshake"></i>
-                        <div class="text">IT Consultant</div>
-                        <p>Providing solution for technology challenges.</p>
-                    </div>
+                <div class="compliance-card">
+                    <div class="card-icon"><i class="fas fa-money-check-alt"></i></div>
+                    <h3>Payment Systems</h3>
+                    <p>Digital payment platforms improving processing efficiency by <strong>50%</strong> and reducing reconciliation effort by <strong>80%</strong>.</p>
                 </div>
-               </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- skills section start -->
-    <section class="skills" id="skills">
-        <div class="max-width">
-            <h2 class="title">My skills</h2>
-            <div class="skills-content">
-                <div class="column left">
-                    <div class="text">My creative skills & experiences.</div>
-                    <p>Team Player <br>
-                    Web Development, Scraping, Automation <br>
-                    Javascript: Node.js, React.js <br>
-                    Python: Django, Python Scripting <br>
-                    Cloud: AWS, Docker <br>
-                    Security: Web Security Testing, API Testing
-                    </p>
-                </div>
-                <div class="column right">
-                    <div class="bars">
-                        <div class="info">
-                            <span>JavaScript</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="line js"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Python</span>
-                            <span>60%</span>
-                        </div>
-                        <div class="line python"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>MySQL</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="line mysql"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>MongoDB</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="line mongodb"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Cloud</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="line cloud"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>System Design</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="line system-design"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Redis</span>
-                            <span>60%</span>
-                        </div>
-                        <div class="line redis"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Web Security</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="line web-security"></div>
-                    </div>
+                <div class="compliance-card">
+                    <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Audit & Traceability</h3>
+                    <p>Production-grade immutable audit logging with field-level change history and sensitive data masking across <strong>30+ models</strong>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="timeline" id="timeline">
-        <ol>
-          <li>
-            <div>
-              <time>Jan, 2021</time> Joined to Smartserv as a software developer Intern and worked on ongoing live projects.
-            </div>
-          </li>
-          <li>
-            <div>
-               <time>Jun, 2021</time> Joined to Smartserv as a software developer. 
-            </div>
-          </li> 
-          <li>
-            <div>
-                <time>September, 2022</time> My first presentation on redis at Smartserv.
-            </div>
-          </li>
-          <li>
-            <div>
-                <time>Feb, 2022</time> Part of Growth team at Smartserv. Work in revenue generation projects.
-            </div>
-          </li>
-          <li>
-            <div>
-                <time>Feb, 2021</time> First spotlight award organised by smartserv and achiever of it. 
-            </div>
-          </li>
-        </ol>
-        
-        <div class="arrows">
-          <button class="arrow arrow__prev disabled" disabled>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
-          </button>
-          <button class="arrow arrow__next">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
-          </button>
-        </div>
-      </section>
-    <!-- teams section start -->
-    <section class="teams" id="teams">
-        <div class="max-width">
-            <h2 class="title">My teams</h2>
-            <div class="carousel owl-carousel">
-                <div class="card">
-                    <div class="box">
-                        <img src="images/akash.jpeg" alt="">
-                        <div class="text">Akash Suvagiya</div>
-                        <p>Software Developer at Simulas. 1+ year of expierence in product base start up.</p>
-                    </div>
+    <!-- Technology Ecosystem -->
+    <section class="tech" id="tech">
+        <h2 class="section-title">03. Deep Tech Stack</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <i class="fas fa-server"></i>
+                    <h3>Back-end</h3>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/smit.jpeg" alt="">
-                        <div class="text">Smit Patel</div>
-                        <p>Software Developer at Smartserv. 1+ year of expierence in product base start up.</p>
-                    </div>
+                <div class="skill-list">
+                    <span class="skill-tag">Node.js</span><span class="skill-tag">Django</span>
+                    <span class="skill-tag">Python</span><span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Persistence</h3>
+                </div>
+                <div class="skill-list">
+                    <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Elasticsearch</span><span class="skill-tag">DynamoDB</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <i class="fab fa-aws"></i>
+                    <h3>Cloud & Infra</h3>
+                </div>
+                <div class="skill-list">
+                    <span class="skill-tag">AWS (EC2, EKS, Lambda)</span><span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Docker</span><span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">Nginx</span><span class="skill-tag">ELK Stack</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Architecture</h3>
+                </div>
+                <div class="skill-list">
+                    <span class="skill-tag">System Design (HLD/LLD)</span><span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">Distributed Systems</span><span class="skill-tag">Event-driven Architecture</span>
+                    <span class="skill-tag">REST APIs</span><span class="skill-tag">Payment Systems</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- contact section start -->
-    <section class="contact" id="contact">
-        <div class="max-width">
-            <h2 class="title">Contact me</h2>
-            <div class="contact-content">
-                <div class="column left">
-                    <div class="text">Get in Touch</div>
-                    <p></p>
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fas fa-user"></i>
-                            <div class="info">
-                                <div class="head">Name</div>
-                                <div class="sub-title">Vipul Vyas</div>
-                            </div>
+    <!-- Experience Section — Tab Layout -->
+    <section class="experience-section" id="experience">
+        <h2 class="section-title">04. Experience</h2>
+        <div class="exp-container">
+            <!-- Tab Buttons -->
+            <div class="exp-tabs" role="tablist">
+                <button class="exp-tab active" data-tab="easebuzz" role="tab">
+                    <span class="tab-company">Easebuzz</span>
+                    <span class="tab-period">May 2025 – Present</span>
+                </button>
+                <button class="exp-tab" data-tab="zentrades" role="tab">
+                    <span class="tab-company">ZenTrades</span>
+                    <span class="tab-period">Aug 2022 – May 2025</span>
+                </button>
+                <button class="exp-tab" data-tab="smartserv" role="tab">
+                    <span class="tab-company">SmartServ</span>
+                    <span class="tab-period">Jan 2021 – Aug 2022</span>
+                </button>
+            </div>
+
+            <!-- Tab Panels -->
+            <div class="exp-panels">
+                <div class="exp-panel active" id="tab-easebuzz">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Full Stack Engineer III <span class="at-company">@ Easebuzz – Payment Gateway</span></h3>
+                            <p class="exp-meta"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra &nbsp;|&nbsp; <i class="fas fa-calendar-alt"></i> May 2025 – Present</p>
                         </div>
-                        <div class="row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="info">
-                                <div class="head">Address</div>
-                                <div class="sub-title">Surat, Gujrat</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fas fa-envelope"></i>
-                            <div class="info">
-                                <div class="head">Email</div>
-                                <div class="sub-title">vipulvyas00813@gmail.com</div>
-                            </div>
-                        </div>
+                        <span class="exp-badge active-badge">Current</span>
                     </div>
+                    <p class="exp-stack"><strong>Stack:</strong> Python (Django), React.js, PostgreSQL, AWS, ELK, Kubernetes</p>
+                    <ul class="resume-points">
+                        <li>Built an end-to-end automated merchant onboarding and KYC platform integrating PAN, GSTIN, TAN verification, bank verification, UBO workflows, and third-party APIs — reducing manual onboarding effort by <strong>70%</strong> and improving merchant activation time by <strong>40%</strong>.</li>
+                        <li>Developed distributed compliance and risk validation pipelines for sanctions screening, entity matching, document verification, and automated re-KYC workflows — improving compliance efficiency by <strong>60%</strong> and reducing onboarding failures by <strong>30%</strong>.</li>
+                        <li>Architected scalable backend services on AWS (EC2, EKS) using containerized microservices and Kubernetes to support high-volume onboarding and payment workflows.</li>
+                        <li>Designed and implemented a society management and digital payments platform using Django, React.js, PostgreSQL, and AWS — improving payment processing efficiency by <strong>50%</strong> and reducing reconciliation effort by <strong>80%</strong>.</li>
+                        <li>Built a production-grade audit logging framework with immutable event tracking, field-level change history, transaction-safe logging, and sensitive data masking across <strong>30+ models</strong>.</li>
+                        <li>Wrote unit and integration tests using Pytest and Pytest-Django, achieving <strong>75%+ code coverage</strong>, improving release reliability and reducing production defects.</li>
+                    </ul>
                 </div>
-                <div class="column right">
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fa fa-linkedin"></i>
-                            <div class="info">
-                                <div class="head"><a href="https://www.linkedin.com/in/vipulvyas-hasky/" >Linkedin</a></div>
-                            </div>
+
+                <div class="exp-panel" id="tab-zentrades">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Software Design Engineer II <span class="at-company">@ ZenTrades</span></h3>
+                            <p class="exp-meta"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra &nbsp;|&nbsp; <i class="fas fa-calendar-alt"></i> Aug 2022 – May 2025</p>
                         </div>
                     </div>
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fa fa-github"></i>
-                            <div class="info">
-                                <div class="head"><a href="https://github.com/vipulvyas" >GitHub</a></div>
-                            </div>
+                    <p class="exp-stack"><strong>Stack:</strong> Node.js, React.js, Python, AWS, ElasticSearch, ELK, Redis, Docker</p>
+                    <ul class="resume-points">
+                        <li>Built a scalable SMS and email campaign system using AWS Pinpoint supporting <strong>50K+ users</strong> and increasing engagement by <strong>50%</strong>.</li>
+                        <li>Developed Django APIs for an AI-powered recommendation system achieving <strong>90% accuracy</strong> using LLMs for speech-to-text, text summarization, and similarity search with ChromaDB and Vertex Search.</li>
+                        <li>Improved platform scalability by developing Python-based data migration scripts and AWS Lambda serverless functions achieving <strong>90% faster processing</strong>.</li>
+                        <li>Optimized APIs using caching strategies and query optimization reducing response time by <strong>30%</strong>.</li>
+                        <li>Integrated QuickBooks (QBD & QBO) for financial automation and built a high-performance Elasticsearch search system improving search experience by <strong>60%</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-panel" id="tab-smartserv">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Software Design Engineer I <span class="at-company">@ SmartServ</span></h3>
+                            <p class="exp-meta"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra &nbsp;|&nbsp; <i class="fas fa-calendar-alt"></i> Jan 2021 – Aug 2022</p>
                         </div>
                     </div>
-                    
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fa fa-stack-overflow"></i>
-                            <div class="info">
-                                <div class="head"><a href="https://stackoverflow.com/users/17560860/vipulvyas">StackOverflow</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fa fa-medium"></i>
-                            <div class="info">
-                                <div class="head"><a href="https://vipulvyas.medium.com/">Medium Blogs</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="exp-stack"><strong>Stack:</strong> Node.js, React.js, Python, AWS, MySQL, MongoDB, WebSocket</p>
+                    <ul class="resume-points">
+                        <li>Improved lead generation and customer engagement by <strong>25%</strong> by streamlining service request submissions and integrating Zapier for automated data workflows, increasing lead management efficiency by <strong>40%</strong>.</li>
+                        <li>Implemented secure authentication and authorization by optimizing login flows, applying Access Control Lists (ACL), adding XSS protection, and resolving JWT key issues.</li>
+                        <li>Developed real-time location tracking and analytics using WebSocket and Socket.io.</li>
+                        <li>Enhanced platform performance by optimizing MySQL database design and reporting queries, improving efficiency by <strong>50%</strong>.</li>
+                        <li>Developed a reusable Node.js billing module (NPM package) ensuring <strong>100% consistent invoice calculations</strong> across Web, Android, and iOS for global tax compliance.</li>
+                        <li>Optimized video compression pipelines using FFmpeg on AWS Lambda integrated with CloudFront and Lambda@Edge, achieving <strong>40–70% efficiency improvement</strong>.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- footer section start -->
+    <!-- Work / Projects Section -->
+    <section class="work-section" id="work">
+        <h2 class="section-title">05. Work & Projects</h2>
+        <div class="work-grid">
+            <!-- Easebuzz Work -->
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot easebuzz-dot"></div>
+                        <span>Easebuzz</span>
+                    </div>
+                    <span class="work-tag">Current</span>
+                </div>
+                <h3>KYC & Merchant Onboarding Platform</h3>
+                <p>Automated document verification, sanctions screening & compliance pipelines for a production payment gateway serving thousands of merchants.</p>
+                <div class="work-tech-row">
+                    <span>Django</span><span>React.js</span><span>PostgreSQL</span><span>AWS EKS</span><span>Kubernetes</span>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot easebuzz-dot"></div>
+                        <span>Easebuzz</span>
+                    </div>
+                </div>
+                <h3>Audit Logging Framework</h3>
+                <p>Production-grade immutable logging with field-level change history, transaction-safe writes, and sensitive data masking across 30+ core models.</p>
+                <div class="work-tech-row">
+                    <span>Django ORM</span><span>PostgreSQL</span><span>Pytest</span>
+                </div>
+            </div>
+
+            <!-- ZenTrades Work -->
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot zentrades-dot"></div>
+                        <span>ZenTrades</span>
+                    </div>
+                </div>
+                <h3>AI Recommendation Engine</h3>
+                <p>LLM-powered recommendation system using speech-to-text, text summarization, and similarity search via ChromaDB and Vertex Search. 90% accuracy.</p>
+                <div class="work-tech-row">
+                    <span>Python</span><span>Django</span><span>LLMs</span><span>ChromaDB</span><span>Vertex AI</span>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot zentrades-dot"></div>
+                        <span>ZenTrades</span>
+                    </div>
+                </div>
+                <h3>SMS/Email Campaign System</h3>
+                <p>Scalable campaign platform using AWS Pinpoint supporting 50K+ users, increasing customer engagement by 50% with dynamic segmentation.</p>
+                <div class="work-tech-row">
+                    <span>Node.js</span><span>AWS Pinpoint</span><span>Redis</span><span>Elasticsearch</span>
+                </div>
+            </div>
+
+            <!-- SmartServ Work -->
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot smartserv-dot"></div>
+                        <span>SmartServ</span>
+                    </div>
+                </div>
+                <h3>Real-time Tracking & Billing</h3>
+                <p>WebSocket-powered real-time location tracking and an NPM billing module ensuring 100% consistent global tax compliance across Web, Android, and iOS.</p>
+                <div class="work-tech-row">
+                    <span>Node.js</span><span>Socket.io</span><span>MySQL</span><span>NPM</span>
+                </div>
+            </div>
+
+            <!-- Open Source -->
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-company">
+                        <div class="company-dot github-dot"></div>
+                        <span>Open Source</span>
+                    </div>
+                    <a href="https://github.com/vipulvyas" target="_blank" class="work-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>WebSocket Scalability System</h3>
+                <p>Designed a real-time communication system scaled with HAProxy load balancer and Redis Pub-Sub for seamless horizontal scaling.</p>
+                <div class="work-tech-row">
+                    <span>Node.js</span><span>Redis Pub-Sub</span><span>HAProxy</span><span>Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medium Blogs Section -->
+    <section class="blogs" id="blogs">
+        <h2 class="section-title">06. Technical Writing</h2>
+        <div class="blogs-grid" id="blogsGrid">
+            <!-- Loading skeleton -->
+            <div class="blog-skeleton"><div class="skel-date"></div><div class="skel-title"></div><div class="skel-body"></div></div>
+            <div class="blog-skeleton"><div class="skel-date"></div><div class="skel-title"></div><div class="skel-body"></div></div>
+            <div class="blog-skeleton"><div class="skel-date"></div><div class="skel-title"></div><div class="skel-body"></div></div>
+        </div>
+        <div style="text-align:center; margin-top: 3rem;">
+            <a href="https://medium.com/@vipulvyas" target="_blank" class="btn btn-outline">View All Articles on Medium →</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">07. Contact</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Build Something Great</h3>
+                <p>I'm always open to discussing new fintech opportunities, system design challenges, or exciting engineering roles. Drop me a message!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:vipulvyas0813@gmail.com">vipulvyas0813@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7016426214</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Pune / Surat, India</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/vipulvyas-hasky/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/vipulvyas" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@vipulvyas" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://stackoverflow.com/users/17560860/vipulvyas" target="_blank" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <span>Created By <a href="#">Vipul Vyas</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+        <p>Designed & Built by <span>Vipul Vyas</span> &nbsp;|&nbsp; &copy; 2026 &nbsp;|&nbsp; Powered by Passion & Coffee ☕</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

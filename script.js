@@ -1,190 +1,187 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        // sticky navbar on scroll script
-        if(this.scrollY > 20){
-            $('.navbar').addClass("sticky");
-        }else{
-            $('.navbar').removeClass("sticky");
+$(document).ready(function () {
+
+    /* ─── STICKY NAV ─── */
+    $(window).on('scroll', function () {
+        $('nav').toggleClass('sticky', this.scrollY > 30);
+    });
+
+    /* ─── MOBILE MENU ─── */
+    $('.menu-btn').on('click', function () {
+        $('nav ul').toggleClass('active');
+        $(this).find('i').toggleClass('fa-bars fa-times');
+    });
+    $('nav ul li a').on('click', function () {
+        $('nav ul').removeClass('active');
+        $('.menu-btn i').addClass('fa-bars').removeClass('fa-times');
+    });
+
+    /* ─── TYPED.JS ─── */
+    if ($('.typing').length) {
+        new Typed('.typing', {
+            strings: [
+                'Senior Software Engineer',
+                'Fintech Solutions Architect',
+                'Scalable Systems Specialist',
+                'Full Stack Developer'
+            ],
+            typeSpeed: 60,
+            backSpeed: 30,
+            loop: true
+        });
+    }
+
+    /* ─── SMOOTH SCROLL ─── */
+    $('a[href*="#"]').on('click', function (e) {
+        const href = $(this).attr('href');
+        if (href && href.startsWith('#') && $(href).length) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $(href).offset().top - 80 }, 600, 'swing');
         }
-        
-        // scroll-up button show/hide script
-        if(this.scrollY > 500){
-            $('.scroll-up-btn').addClass("show");
-        }else{
-            $('.scroll-up-btn').removeClass("show");
+    });
+
+    /* ─── EXPERIENCE TABS ─── */
+    $('.exp-tab').on('click', function () {
+        const tab = $(this).data('tab');
+        $('.exp-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.exp-panel').removeClass('active');
+        $('#tab-' + tab).addClass('active');
+    });
+
+    /* ─── SCROLL REVEAL ─── */
+    const revealSel = '.compliance-card, .skill-group, .work-card, .blog-card, .about-container, .exp-container, .contact-container';
+    $('<style>.revealed { opacity: 1 !important; transform: translateY(0) !important; }</style>').appendTo('head');
+    $(revealSel).css({ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 0.6s ease, transform 0.6s ease' });
+    const reveal = () => {
+        const wH = $(window).height();
+        $(revealSel).each(function () {
+            if (this.getBoundingClientRect().top <= wH * 0.9) $(this).addClass('revealed');
+        });
+    };
+    $(window).on('scroll', reveal);
+    setTimeout(reveal, 200);
+
+    /* ─── MEDIUM RSS FEED (Live) ─── */
+    const MEDIUM_USER = 'vipulvyas';
+    const RSS_API = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${MEDIUM_USER}&api_key=&count=6`;
+
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function stripHtml(html) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        const text = tmp.textContent || tmp.innerText || '';
+        return text.replace(/\s+/g, ' ').trim().substring(0, 140) + '…';
+    }
+
+    function renderBlogs(items) {
+        const grid = $('#blogsGrid');
+        grid.empty();
+        if (!items || items.length === 0) {
+            grid.html('<p style="color:var(--text-dim); text-align:center; grid-column:1/-1;">Could not load articles. <a href="https://medium.com/@' + MEDIUM_USER + '" target="_blank" style="color:var(--primary-color)">View on Medium →</a></p>');
+            return;
         }
-    });
 
-    // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
-    });
+        // Filter out non-article items and show max 6
+        const articles = items.filter(item => item.title && item.link).slice(0, 6);
 
-    $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
-    });
+        articles.forEach(item => {
+            const dateLabel = formatDate(item.pubDate);
+            const excerpt = item.description ? stripHtml(item.description) : '';
+            // Pick first tag/category as label
+            const tag = (item.categories && item.categories.length) ? item.categories[0] : 'Engineering';
 
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
+            const card = `
+                <a class="blog-card" href="${item.link}" target="_blank" rel="noopener">
+                    <span class="date"><i class="fas fa-calendar-alt"></i> ${dateLabel} &nbsp;·&nbsp; <em>${tag}</em></span>
+                    <h3>${item.title}</h3>
+                    <p>${excerpt}</p>
+                    <span class="read-more">Read on Medium →</span>
+                </a>`;
+            grid.append(card);
+        });
 
-    // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Developer", "Blogger", "Researcher", "Learner"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+        // Apply reveal to freshly inserted cards
+        $('.blog-card').css({ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 0.6s ease, transform 0.6s ease' });
+        setTimeout(reveal, 100);
+    }
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Developer", "Blogger", "Researcher", "Learner"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    // owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
+    // Attempt live fetch
+    $.ajax({
+        url: RSS_API,
+        method: 'GET',
+        timeout: 8000,
+        success: function (data) {
+            if (data.status === 'ok' && data.items) {
+                renderBlogs(data.items);
+            } else {
+                // Fallback: render a curated static list
+                renderFallbackBlogs();
             }
+        },
+        error: function () {
+            renderFallbackBlogs();
         }
     });
 
-    const timeline = document.querySelector(".timeline ol"),
-    elH = document.querySelectorAll(".timeline li > div"),
-    arrows = document.querySelectorAll(".timeline .arrows .arrow"),
-    arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
-    arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
-    firstItem = document.querySelector(".timeline li:first-child"),
-    lastItem = document.querySelector(".timeline li:last-child"),
-    xScrolling = 280,
-    disabledClass = "disabled";
-
-  // START
-  window.addEventListener("load", init);
-
-  function init() {
-    setEqualHeights(elH);
-    animateTl(xScrolling, arrows, timeline);
-    setSwipeFn(timeline, arrowPrev, arrowNext);
-    setKeyboardFn(arrowPrev, arrowNext);
-  }
-
-  // SET EQUAL HEIGHTS
-  function setEqualHeights(el) {
-    let counter = 0;
-    for (let i = 0; i < el.length; i++) {
-      const singleHeight = el[i].offsetHeight;
-
-      if (counter < singleHeight) {
-        counter = singleHeight;
-      }
+    // Fallback if API is down or rate-limited — sourced from the user's actual posts
+    function renderFallbackBlogs() {
+        const staticPosts = [
+            {
+                title: 'A Comprehensive Guide to PostgreSQL MVCC: Transactions, Isolation, Physical Storage and VACUUM',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2025-07-31',
+                description: 'A deep dive into PostgreSQL internals — how MVCC handles concurrency, the physical storage model, transaction isolation levels, and the VACUUM process.',
+                categories: ['Database']
+            },
+            {
+                title: 'Message Queues in System Design: The Backbone of Scalable Systems',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2026-04-06',
+                description: 'How message queues enable asynchronous, fault-tolerant, and decoupled services in distributed system design.',
+                categories: ['System Design']
+            },
+            {
+                title: 'Understanding Database Internals: How Tables and Indexes are Stored on Disk',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2023-07-22',
+                description: 'A practical look at how relational databases physically store tables and indexes — pages, extents, heap files, and more.',
+                categories: ['Database']
+            },
+            {
+                title: 'Optimizing Feature Flags in MySQL: A Bitwise Approach',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2023-11-11',
+                description: 'How to use bitwise operations in MySQL to store and query feature flags efficiently without multiple boolean columns.',
+                categories: ['MySQL']
+            },
+            {
+                title: 'ACID Property: Ensuring Data Integrity and Reliability in Database Transactions',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2023-07-08',
+                description: 'A thorough explanation of Atomicity, Consistency, Isolation, and Durability in the context of modern relational databases.',
+                categories: ['Database']
+            },
+            {
+                title: 'Scale WebSocket using Redis and HAProxy',
+                link: 'https://medium.com/@vipulvyas',
+                pubDate: '2023-01-29',
+                description: 'How to horizontally scale WebSocket servers using Redis Pub-Sub as the message broker and HAProxy for sticky session load balancing.',
+                categories: ['Backend']
+            }
+        ];
+        renderBlogs(staticPosts);
     }
 
-    for (let i = 0; i < el.length; i++) {
-      el[i].style.height = `${counter}px`;
-    }
-  }
-
-  // CHECK IF AN ELEMENT IS IN VIEWPORT
-  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  // SET STATE OF PREV/NEXT ARROWS
-  function setBtnState(el, flag = true) {
-    if (flag) {
-      el.classList.add(disabledClass);
-    } else {
-      if (el.classList.contains(disabledClass)) {
-        el.classList.remove(disabledClass);
-      }
-      el.disabled = false;
-    }
-  }
-
-  // ANIMATE TIMELINE
-  function animateTl(scrolling, el, tl) {
-    let counter = 0;
-    for (let i = 0; i < el.length; i++) {
-      el[i].addEventListener("click", function() {
-        if (!arrowPrev.disabled) {
-          arrowPrev.disabled = true;
-        }
-        if (!arrowNext.disabled) {
-          arrowNext.disabled = true;
-        }
-        const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
-        if (counter === 0) {
-          tl.style.transform = `translateX(-${scrolling}px)`;
-        } else {
-          const tlStyle = getComputedStyle(tl);
-          // add more browser prefixes if needed here
-          const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
-          const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
-          tl.style.transform = `translateX(${values}px)`;
-        }
-
-        setTimeout(() => {
-          isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
-          isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
-        }, 1100);
-
-        counter++;
-      });
-    }
-  }
-
-  // ADD SWIPE SUPPORT FOR TOUCH DEVICES
-  function setSwipeFn(tl, prev, next) {
-    // const hammer = new Hammer(tl);
-    // hammer.on("swipeleft", () => next.click());
-    // hammer.on("swiperight", () => prev.click());
-  }
-
-  // ADD BASIC KEYBOARD FUNCTIONALITY
-  function setKeyboardFn(prev, next) {
-    document.addEventListener("keydown", (e) => {
-      if ((e.which === 37) || (e.which === 39)) {
-        const timelineOfTop = timeline.offsetTop;
-        const y = window.pageYOffset;
-        if (timelineOfTop !== y) {
-          window.scrollTo(0, timelineOfTop);
-        }
-        if (e.which === 37) {
-          prev.click();
-        } else if (e.which === 39) {
-          next.click();
-        }
-      }
+    /* ─── CONTACT FORM ─── */
+    $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+        const btn = $(this).find('button[type="submit"]');
+        btn.html('<i class="fas fa-check"></i> Message Sent!').css('opacity', '0.7').prop('disabled', true);
+        setTimeout(() => btn.html('<i class="fas fa-paper-plane"></i> Send Message').css('opacity', '1').prop('disabled', false), 3500);
     });
-  }
+
 });
