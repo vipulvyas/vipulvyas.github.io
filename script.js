@@ -132,45 +132,45 @@ $(document).ready(function () {
         const staticPosts = [
             {
                 title: 'A Comprehensive Guide to PostgreSQL MVCC: Transactions, Isolation, Physical Storage and VACUUM',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/a-comprehensive-guide-to-postgresql-mvcc-transactions-isolation-physical-storage-and-vacuum-7e31d028d488',
                 pubDate: '2025-07-31',
                 description: 'A deep dive into PostgreSQL internals — how MVCC handles concurrency, the physical storage model, transaction isolation levels, and the VACUUM process.',
-                categories: ['Database']
+                categories: ['PostgreSQL Database']
             },
             {
                 title: 'Message Queues in System Design: The Backbone of Scalable Systems',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/message-queues-in-system-design-the-backbone-of-scalable-systems-95b900311c3e',
                 pubDate: '2026-04-06',
                 description: 'How message queues enable asynchronous, fault-tolerant, and decoupled services in distributed system design.',
                 categories: ['System Design']
             },
             {
                 title: 'Understanding Database Internals: How Tables and Indexes are Stored on Disk',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/understanding-database-internals-how-tables-and-indexes-are-stored-on-disk-and-queried-7cf09a6a48a4',
                 pubDate: '2023-07-22',
                 description: 'A practical look at how relational databases physically store tables and indexes — pages, extents, heap files, and more.',
                 categories: ['Database']
             },
             {
                 title: 'Optimizing Feature Flags in MySQL: A Bitwise Approach',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/optimizing-feature-flags-in-mysql-a-bitwise-approach-c8cc088f5a63',
                 pubDate: '2023-11-11',
                 description: 'How to use bitwise operations in MySQL to store and query feature flags efficiently without multiple boolean columns.',
                 categories: ['MySQL']
             },
             {
                 title: 'ACID Property: Ensuring Data Integrity and Reliability in Database Transactions',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/acid-property-ensuring-data-integrity-and-reliability-in-database-transactions-9e47df4dab85',
                 pubDate: '2023-07-08',
                 description: 'A thorough explanation of Atomicity, Consistency, Isolation, and Durability in the context of modern relational databases.',
                 categories: ['Database']
             },
             {
                 title: 'Scale WebSocket using Redis and HAProxy',
-                link: 'https://medium.com/@vipulvyas',
+                link: 'https://vipulvyas.medium.com/scale-websocket-using-redis-and-haproxy-8e09e4d6ae87',
                 pubDate: '2023-01-29',
                 description: 'How to horizontally scale WebSocket servers using Redis Pub-Sub as the message broker and HAProxy for sticky session load balancing.',
-                categories: ['Backend']
+                categories: ['Backend, System Design']
             }
         ];
         renderBlogs(staticPosts);
